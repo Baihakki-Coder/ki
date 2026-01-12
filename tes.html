@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FocusLock - Disiplin Digital</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+--primary:#4F46E5;
+--secondary:#10B981;
+--accent:#F59E0B;
+--dark:#0f172a;
+--text:#1f2937;
+--light:#f8fafc;
+--radius:14px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Segoe UI',sans-serif;
+color:var(--text);
+background:#000;
+overflow-x:hidden;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+.animated-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+background:linear-gradient(-45deg,#4F46E5,#10B981,#6366F1,#22C55E);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* Floating circles */
+.bubble{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.15);
+animation:float 20s infinite linear;
+}
+
+.bubble:nth-child(1){width:80px;height:80px;left:10%;animation-duration:18s}
+.bubble:nth-child(2){width:120px;height:120px;left:30%;animation-duration:22s}
+.bubble:nth-child(3){width:60px;height:60px;left:60%;animation-duration:16s}
+.bubble:nth-child(4){width:100px;height:100px;left:80%;animation-duration:24s}
+
+@keyframes float{
+0%{bottom:-150px;transform:translateX(0)}
+100%{bottom:110%;transform:translateX(80px)}
+}
+
+/* ===== LAYOUT ===== */
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+header{
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+height:80px;
+}
+
+.logo{
+font-size:1.6rem;
+font-weight:800;
+display:flex;
+gap:10px;
+color:var(--primary);
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a:hover{color:var(--primary)}
+
+.btn{
+padding:12px 28px;
+border-radius:30px;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:var(--primary);
+color:#fff;
+}
+
+.btn-primary:hover{transform:translateY(-2px)}
+
+.hero{
+padding:120px 0;
+color:#fff;
+text-align:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+opacity:.9;
+}
+
+/* ===== SECTION ===== */
+.section{
+padding:90px 0;
+background:#fff;
+}
+
+.section.dark{
+background:var(--dark);
+color:#fff;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+gap:30px;
+}
+
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+
+.card{
+background:#fff;
+border-radius:var(--radius);
+overflow:hidden;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.card:hover{transform:translateY(-8px)}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-body{
+padding:20px;
+}
+
+.card-body h3{
+margin-bottom:10px;
+color:var(--primary);
+}
+
+/* ===== TEAM ===== */
+.team img{
+border-radius:50%;
+width:120px;
+height:120px;
+object-fit:cover;
+margin:20px auto;
+display:block;
+border:4px solid var(--primary);
+}
+
+/* ===== FOOTER ===== */
+footer{
+background:#020617;
+color:#94a3b8;
+padding:40px 0;
+text-align:center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.grid-3,.grid-4{grid-template-columns:1fr}
+.hero h1{font-size:2.2rem}
+.nav-links{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="animated-bg"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo"><i class="fa-solid fa-lock"></i> FocusLock</div>
+<div class="nav-links">
+<a href="#fitur">Fitur</a>
+<a href="#tim">Tim</a>
+<a href="#kontak">Kontak</a>
+</div>
+<a class="btn btn-primary">Download</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Kunci Distraksi, Buka Prestasi</h1>
+<p>FocusLock membantu pelajar dan pekerja tetap fokus dengan sistem pengunci aplikasi cerdas.</p>
+</div>
+</section>
+
+<section id="fitur" class="section">
+<div class="container">
+<div class="section-title">
+<h2>Bidang Pengembangan</h2>
+<p>Tim profesional di balik FocusLock</p>
+</div>
+
+<div class="grid grid-4">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+<div class="card-body">
+<h3>Backend Developer</h3>
+<p>Logika sistem pengunci & keamanan aplikasi.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<div class="card-body">
+<h3>Frontend Developer</h3>
+<p>Tampilan interaktif & user friendly.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="design.jpg">
+<div class="card-body">
+<h3>UI / UX Designer</h3>
+<p>Desain nyaman & mudah digunakan.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<div class="card-body">
+<h3>Digital Marketing</h3>
+<p>Strategi promosi & branding aplikasi.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="tim" class="section dark">
+<div class="container">
+<div class="section-title">
+<h2>Tim Inti</h2>
+</div>
+
+<div class="grid grid-3 team">
+
+<div class="card">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<div class="card-body">
+<h3>Project Manager</h3>
+<p>Koordinator & strategi produk</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://randomuser.me/api/portraits/women/45.jpg">
+<div class="card-body">
+<h3>Lead Developer</h3>
+<p>Arsitektur & sistem keamanan</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://randomuser.me/api/portraits/men/76.jpg">
+<div class="card-body">
+<h3>UI Engineer</h3>
+<p>Interaksi & pengalaman pengguna</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer id="kontak">
+<p>© 2026 FocusLock — Project RPL</p>
+<p>No Telp: +62 838 5200 6523 </p>
+<p>Email: hello@focuslock.id</p>
+</footer>
+
+</body>
+</html>
